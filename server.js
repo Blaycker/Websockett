@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
 const wss = new WebSocketServer({ noServer: true });
 
 server.on('upgrade', (req, socket, head) => {
-  if (req.url !== '/app53') return socket.destroy();
+  if (req.url !== '/app31') return socket.destroy();
 
   wss.handleUpgrade(req, socket, head, (ws) => {
     const tunnel = net.connect(VPS_PORT, VPS_HOST, () => {
